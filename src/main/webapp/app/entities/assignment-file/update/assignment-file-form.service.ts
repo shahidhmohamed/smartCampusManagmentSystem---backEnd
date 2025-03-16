@@ -14,7 +14,7 @@ type PartialWithRequiredKeyOf<T extends { id: unknown }> = Partial<Omit<T, 'id'>
  */
 type AssignmentFileFormGroupInput = IAssignmentFile | PartialWithRequiredKeyOf<NewAssignmentFile>;
 
-type AssignmentFileFormDefaults = Pick<NewAssignmentFile, 'id'>;
+type AssignmentFileFormDefaults = Pick<NewAssignmentFile, 'id' | 'isSubmitted'>;
 
 type AssignmentFileFormGroupContent = {
   id: FormControl<IAssignmentFile['id'] | NewAssignmentFile['id']>;
@@ -35,6 +35,7 @@ type AssignmentFileFormGroupContent = {
   feedback: FormControl<IAssignmentFile['feedback']>;
   gradedBy: FormControl<IAssignmentFile['gradedBy']>;
   gradedAt: FormControl<IAssignmentFile['gradedAt']>;
+  isSubmitted: FormControl<IAssignmentFile['isSubmitted']>;
 };
 
 export type AssignmentFileFormGroup = FormGroup<AssignmentFileFormGroupContent>;
@@ -71,6 +72,7 @@ export class AssignmentFileFormService {
       feedback: new FormControl(assignmentFileRawValue.feedback),
       gradedBy: new FormControl(assignmentFileRawValue.gradedBy),
       gradedAt: new FormControl(assignmentFileRawValue.gradedAt),
+      isSubmitted: new FormControl(assignmentFileRawValue.isSubmitted),
     });
   }
 
@@ -91,6 +93,7 @@ export class AssignmentFileFormService {
   private getFormDefaults(): AssignmentFileFormDefaults {
     return {
       id: null,
+      isSubmitted: false,
     };
   }
 }

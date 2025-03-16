@@ -69,6 +69,10 @@
     {
       "fieldName": "gradedAt",
       "fieldType": "String"
+    },
+    {
+      "fieldName": "isSubmitted",
+      "fieldType": "Boolean"
     }
   ],
   "jpaMetamodelFiltering": false,

@@ -193,6 +193,13 @@
                 }
               </div>
             </th>
+            <th scope="col" jhiSortBy="isSubmitted">
+              <div class="d-flex">
+                <span>Is Submitted</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
             <th scope="col"></th>
           </tr>
         </thead>
@@ -220,6 +227,7 @@
               <td>{{ assignmentFile.feedback }}</td>
               <td>{{ assignmentFile.gradedBy }}</td>
               <td>{{ assignmentFile.gradedAt }}</td>
+              <td>{{ assignmentFile.isSubmitted }}</td>
               <td class="text-end">
                 <div class="btn-group">
                   <a

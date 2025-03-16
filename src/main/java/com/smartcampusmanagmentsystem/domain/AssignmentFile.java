@@ -84,6 +84,10 @@ public class AssignmentFile implements Serializable {
     @org.springframework.data.elasticsearch.annotations.Field(type = org.springframework.data.elasticsearch.annotations.FieldType.Text)
     private String gradedAt;
 
+    @Field("is_submitted")
+    @org.springframework.data.elasticsearch.annotations.Field(type = org.springframework.data.elasticsearch.annotations.FieldType.Boolean)
+    private Boolean isSubmitted;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
     public String getId() {
@@ -320,6 +324,19 @@ public class AssignmentFile implements Serializable {
         this.gradedAt = gradedAt;
     }
 
+    public Boolean getIsSubmitted() {
+        return this.isSubmitted;
+    }
+
+    public AssignmentFile isSubmitted(Boolean isSubmitted) {
+        this.setIsSubmitted(isSubmitted);
+        return this;
+    }
+
+    public void setIsSubmitted(Boolean isSubmitted) {
+        this.isSubmitted = isSubmitted;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -361,6 +378,7 @@ public class AssignmentFile implements Serializable {
             ", feedback='" + getFeedback() + "'" +
             ", gradedBy='" + getGradedBy() + "'" +
             ", gradedAt='" + getGradedAt() + "'" +
+            ", isSubmitted='" + getIsSubmitted() + "'" +
             "}";
     }
 }

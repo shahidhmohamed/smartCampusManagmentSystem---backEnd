@@ -5,15 +5,15 @@ export const sampleWithRequiredData: IAssignmentFile = {
 };
 
 export const sampleWithPartialData: IAssignmentFile = {
-  id: 'cd57164b-9d41-44c4-8dac-4dce39dbd5c8',
-  assignmentId: 'absentmindedly',
-  fileSize: 24103,
-  createdAt: 'fluffy until after',
-  mimeType: 'inwardly meanwhile joyously',
-  extension: 'hence atop sunny',
-  markingStatus: 'REVIEWED',
-  gradedBy: 'past mosh',
-  gradedAt: 'proper aw knowledgeably',
+  id: 'd57164b9-d414-4c4d-9ac4-dce39dbd5c83',
+  assignmentId: 'reword',
+  fileSize: 28871,
+  createdAt: 'peter acknowledge',
+  mimeType: 'until hence jovially',
+  extension: 'lest physically on',
+  markingStatus: 'GRADED',
+  gradedBy: 'mortar ruin',
+  gradedAt: 'except',
 };
 
 export const sampleWithFullData: IAssignmentFile = {
@@ -35,6 +35,7 @@ export const sampleWithFullData: IAssignmentFile = {
   feedback: 'consequently',
   gradedBy: 'the inside fast',
   gradedAt: 'ew',
+  isSubmitted: true,
 };
 
 export const sampleWithNewData: NewAssignmentFile = {

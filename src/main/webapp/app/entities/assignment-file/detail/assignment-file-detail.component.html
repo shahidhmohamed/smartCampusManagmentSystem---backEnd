@@ -81,6 +81,10 @@
           <dd>
             <span>{{ assignmentFileRef.gradedAt }}</span>
           </dd>
+          <dt><span>Is Submitted</span></dt>
+          <dd>
+            <span>{{ assignmentFileRef.isSubmitted }}</span>
+          </dd>
         </dl>
 
         <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

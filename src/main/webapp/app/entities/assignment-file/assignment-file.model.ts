@@ -19,6 +19,7 @@ export interface IAssignmentFile {
   feedback?: string | null;
   gradedBy?: string | null;
   gradedAt?: string | null;
+  isSubmitted?: boolean | null;
 }
 
 export type NewAssignmentFile = Omit<IAssignmentFile, 'id'> & { id: null };

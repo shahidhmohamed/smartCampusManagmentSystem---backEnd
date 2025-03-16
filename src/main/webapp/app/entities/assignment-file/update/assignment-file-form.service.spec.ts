@@ -36,6 +36,7 @@ describe('AssignmentFile Form Service', () => {
             feedback: expect.any(Object),
             gradedBy: expect.any(Object),
             gradedAt: expect.any(Object),
+            isSubmitted: expect.any(Object),
           }),
         );
       });
@@ -62,6 +63,7 @@ describe('AssignmentFile Form Service', () => {
             feedback: expect.any(Object),
             gradedBy: expect.any(Object),
             gradedAt: expect.any(Object),
+            isSubmitted: expect.any(Object),
           }),
         );
       });

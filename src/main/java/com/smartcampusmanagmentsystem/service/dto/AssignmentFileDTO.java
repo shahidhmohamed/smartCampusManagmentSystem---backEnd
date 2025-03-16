@@ -46,6 +46,8 @@ public class AssignmentFileDTO implements Serializable {
 
     private String gradedAt;
 
+    private Boolean isSubmitted;
+
     public String getId() {
         return id;
     }
@@ -190,6 +192,14 @@ public class AssignmentFileDTO implements Serializable {
         this.gradedAt = gradedAt;
     }
 
+    public Boolean getIsSubmitted() {
+        return isSubmitted;
+    }
+
+    public void setIsSubmitted(Boolean isSubmitted) {
+        this.isSubmitted = isSubmitted;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -232,6 +242,7 @@ public class AssignmentFileDTO implements Serializable {
             ", feedback='" + getFeedback() + "'" +
             ", gradedBy='" + getGradedBy() + "'" +
             ", gradedAt='" + getGradedAt() + "'" +
+            ", isSubmitted='" + getIsSubmitted() + "'" +
             "}";
     }
 }

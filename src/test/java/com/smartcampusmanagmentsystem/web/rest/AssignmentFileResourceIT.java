@@ -89,6 +89,9 @@ class AssignmentFileResourceIT {
     private static final String DEFAULT_GRADED_AT = "AAAAAAAAAA";
     private static final String UPDATED_GRADED_AT = "BBBBBBBBBB";
 
+    private static final Boolean DEFAULT_IS_SUBMITTED = false;
+    private static final Boolean UPDATED_IS_SUBMITTED = true;
+
     private static final String ENTITY_API_URL = "/api/assignment-files";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
     private static final String ENTITY_SEARCH_API_URL = "/api/assignment-files/_search";
@@ -136,7 +139,8 @@ class AssignmentFileResourceIT {
             .grade(DEFAULT_GRADE)
             .feedback(DEFAULT_FEEDBACK)
             .gradedBy(DEFAULT_GRADED_BY)
-            .gradedAt(DEFAULT_GRADED_AT);
+            .gradedAt(DEFAULT_GRADED_AT)
+            .isSubmitted(DEFAULT_IS_SUBMITTED);
     }
 
     /**
@@ -163,7 +167,8 @@ class AssignmentFileResourceIT {
             .grade(UPDATED_GRADE)
             .feedback(UPDATED_FEEDBACK)
             .gradedBy(UPDATED_GRADED_BY)
-            .gradedAt(UPDATED_GRADED_AT);
+            .gradedAt(UPDATED_GRADED_AT)
+            .isSubmitted(UPDATED_IS_SUBMITTED);
     }
 
     @BeforeEach
@@ -289,7 +294,9 @@ class AssignmentFileResourceIT {
             .jsonPath("$.[*].gradedBy")
             .value(hasItem(DEFAULT_GRADED_BY))
             .jsonPath("$.[*].gradedAt")
-            .value(hasItem(DEFAULT_GRADED_AT));
+            .value(hasItem(DEFAULT_GRADED_AT))
+            .jsonPath("$.[*].isSubmitted")
+            .value(hasItem(DEFAULT_IS_SUBMITTED));
     }
 
     @Test
@@ -343,7 +350,9 @@ class AssignmentFileResourceIT {
             .jsonPath("$.gradedBy")
             .value(is(DEFAULT_GRADED_BY))
             .jsonPath("$.gradedAt")
-            .value(is(DEFAULT_GRADED_AT));
+            .value(is(DEFAULT_GRADED_AT))
+            .jsonPath("$.isSubmitted")
+            .value(is(DEFAULT_IS_SUBMITTED));
     }
 
     @Test
@@ -386,7 +395,8 @@ class AssignmentFileResourceIT {
             .grade(UPDATED_GRADE)
             .feedback(UPDATED_FEEDBACK)
             .gradedBy(UPDATED_GRADED_BY)
-            .gradedAt(UPDATED_GRADED_AT);
+            .gradedAt(UPDATED_GRADED_AT)
+            .isSubmitted(UPDATED_IS_SUBMITTED);
         AssignmentFileDTO assignmentFileDTO = assignmentFileMapper.toDto(updatedAssignmentFile);
 
         webTestClient
@@ -507,7 +517,8 @@ class AssignmentFileResourceIT {
             .type(UPDATED_TYPE)
             .mimeType(UPDATED_MIME_TYPE)
             .binaryData(UPDATED_BINARY_DATA)
-            .binaryDataContentType(UPDATED_BINARY_DATA_CONTENT_TYPE);
+            .binaryDataContentType(UPDATED_BINARY_DATA_CONTENT_TYPE)
+            .isSubmitted(UPDATED_IS_SUBMITTED);
 
         webTestClient
             .patch()
@@ -555,7 +566,8 @@ class AssignmentFileResourceIT {
             .grade(UPDATED_GRADE)
             .feedback(UPDATED_FEEDBACK)
             .gradedBy(UPDATED_GRADED_BY)
-            .gradedAt(UPDATED_GRADED_AT);
+            .gradedAt(UPDATED_GRADED_AT)
+            .isSubmitted(UPDATED_IS_SUBMITTED);
 
         webTestClient
             .patch()
@@ -724,7 +736,9 @@ class AssignmentFileResourceIT {
             .jsonPath("$.[*].gradedBy")
             .value(hasItem(DEFAULT_GRADED_BY))
             .jsonPath("$.[*].gradedAt")
-            .value(hasItem(DEFAULT_GRADED_AT));
+            .value(hasItem(DEFAULT_GRADED_AT))
+            .jsonPath("$.[*].isSubmitted")
+            .value(hasItem(DEFAULT_IS_SUBMITTED));
     }
 
     protected long getRepositoryCount() {

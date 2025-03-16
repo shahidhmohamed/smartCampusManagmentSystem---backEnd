@@ -65,7 +65,8 @@ public class AssignmentFileAsserts {
             .satisfies(a -> assertThat(a.getGrade()).as("check grade").isEqualTo(expected.getGrade()))
             .satisfies(a -> assertThat(a.getFeedback()).as("check feedback").isEqualTo(expected.getFeedback()))
             .satisfies(a -> assertThat(a.getGradedBy()).as("check gradedBy").isEqualTo(expected.getGradedBy()))
-            .satisfies(a -> assertThat(a.getGradedAt()).as("check gradedAt").isEqualTo(expected.getGradedAt()));
+            .satisfies(a -> assertThat(a.getGradedAt()).as("check gradedAt").isEqualTo(expected.getGradedAt()))
+            .satisfies(a -> assertThat(a.getIsSubmitted()).as("check isSubmitted").isEqualTo(expected.getIsSubmitted()));
     }
 
     /**
