@@ -1,0 +1,47 @@
+{
+  "annotations": {
+    "changelogDate": "20250315020254"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "courseId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "moduleId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "instructorId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "scheduleDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "scheduleTimeFrom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "scheduleTimeTo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "location",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "ClassSchedule",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "elasticsearch",
+  "service": "serviceClass"
+}

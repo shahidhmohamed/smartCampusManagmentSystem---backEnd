@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (courseRegistration(); as courseRegistrationRef) {
+      <div>
+        <h2 data-cy="courseRegistrationDetailsHeading"><span>Course Registration</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ courseRegistrationRef.id }}</span>
+          </dd>
+          <dt><span>Student Id</span></dt>
+          <dd>
+            <span>{{ courseRegistrationRef.studentId }}</span>
+          </dd>
+          <dt><span>Course Id</span></dt>
+          <dd>
+            <span>{{ courseRegistrationRef.courseId }}</span>
+          </dd>
+          <dt><span>Course Code</span></dt>
+          <dd>
+            <span>{{ courseRegistrationRef.courseCode }}</span>
+          </dd>
+          <dt><span>Duration</span></dt>
+          <dd>
+            <span>{{ courseRegistrationRef.duration }}</span>
+          </dd>
+          <dt><span>Registration Date</span></dt>
+          <dd>
+            <span>{{ courseRegistrationRef.registrationDate }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/course-registration', courseRegistrationRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

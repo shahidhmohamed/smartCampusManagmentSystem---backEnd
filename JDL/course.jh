@@ -1,0 +1,58 @@
+// enum AttendanceStatus {
+//     PRESENT ABSENT
+// }
+
+
+// entity Student {
+//     studentId String 
+//     name String
+//     email String 
+//     phone String
+//     enrollmentDate String
+//     courseId String // Foreign Key reference to Course
+// }
+
+// entity Course {
+//     courseName String
+// }
+
+// entity Module {
+//     moduleName String
+//     courseId String // Foreign Key reference to Course
+// }
+
+// entity Staff {
+//     staffId String 
+//     name String
+//     email String 
+//     role String
+// }
+
+// entity Attendance {
+//     date String
+//     studentId String
+//     moduleId String
+//     status AttendanceStatus
+// }
+
+
+entity Course {
+    courseName String
+    courseCode String
+    department String
+    duration String
+}
+
+entity CourseRegistration {
+    studentId String
+    courseId String
+    courseCode String
+    duration String
+    registrationDate String
+}
+
+paginate * with pagination
+service * with serviceClass
+dto * with mapstruct
+search * with elasticsearch
+filter *

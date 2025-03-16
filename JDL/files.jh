@@ -1,0 +1,31 @@
+entity Folder {
+    name String,
+    contents String,
+    courseId String,
+    course String,
+    semester String,
+    createdBy String,
+    createdAt String,
+    modifiedAt String,
+    parentId String
+}
+
+entity File {
+    folderId String,
+    name String,
+    type String,
+    fileSize Integer,
+    createdBy String,
+    createdAt String,
+    modifiedAt String,
+    mimeType String,
+    extension String,
+    binaryData Blob required
+}
+
+
+paginate * with pagination
+service * with serviceClass
+dto * with mapstruct
+search * with elasticsearch
+filter *

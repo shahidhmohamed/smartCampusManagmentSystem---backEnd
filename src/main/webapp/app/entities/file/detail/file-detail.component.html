@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (file(); as fileRef) {
+      <div>
+        <h2 data-cy="fileDetailsHeading"><span>File</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ fileRef.id }}</span>
+          </dd>
+          <dt><span>Folder Id</span></dt>
+          <dd>
+            <span>{{ fileRef.folderId }}</span>
+          </dd>
+          <dt><span>Name</span></dt>
+          <dd>
+            <span>{{ fileRef.name }}</span>
+          </dd>
+          <dt><span>Type</span></dt>
+          <dd>
+            <span>{{ fileRef.type }}</span>
+          </dd>
+          <dt><span>File Size</span></dt>
+          <dd>
+            <span>{{ fileRef.fileSize }}</span>
+          </dd>
+          <dt><span>Created By</span></dt>
+          <dd>
+            <span>{{ fileRef.createdBy }}</span>
+          </dd>
+          <dt><span>Created At</span></dt>
+          <dd>
+            <span>{{ fileRef.createdAt }}</span>
+          </dd>
+          <dt><span>Modified At</span></dt>
+          <dd>
+            <span>{{ fileRef.modifiedAt }}</span>
+          </dd>
+          <dt><span>Mime Type</span></dt>
+          <dd>
+            <span>{{ fileRef.mimeType }}</span>
+          </dd>
+          <dt><span>Extension</span></dt>
+          <dd>
+            <span>{{ fileRef.extension }}</span>
+          </dd>
+          <dt><span>Binary Data</span></dt>
+          <dd>
+            <span>{{ fileRef.binaryData }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/file', fileRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

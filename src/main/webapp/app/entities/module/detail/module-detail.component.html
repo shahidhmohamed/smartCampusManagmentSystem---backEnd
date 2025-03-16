@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (module(); as moduleRef) {
+      <div>
+        <h2 data-cy="moduleDetailsHeading"><span>Module</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ moduleRef.id }}</span>
+          </dd>
+          <dt><span>Module Name</span></dt>
+          <dd>
+            <span>{{ moduleRef.moduleName }}</span>
+          </dd>
+          <dt><span>Module Code</span></dt>
+          <dd>
+            <span>{{ moduleRef.moduleCode }}</span>
+          </dd>
+          <dt><span>Course Id</span></dt>
+          <dd>
+            <span>{{ moduleRef.courseId }}</span>
+          </dd>
+          <dt><span>Semester</span></dt>
+          <dd>
+            <span>{{ moduleRef.semester }}</span>
+          </dd>
+          <dt><span>Lecturer Id</span></dt>
+          <dd>
+            <span>{{ moduleRef.lecturerId }}</span>
+          </dd>
+          <dt><span>Duration</span></dt>
+          <dd>
+            <span>{{ moduleRef.duration }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/module', moduleRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

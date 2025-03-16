@@ -1,0 +1,16 @@
+entity ClassSchedule{
+    id String
+    courseId String
+    moduleId String
+    instructorId String
+    scheduleDate String
+    scheduleTimeFrom String
+    scheduleTimeTo String
+    location String
+}
+
+paginate * with pagination
+service * with serviceClass
+dto * with mapstruct
+search * with elasticsearch
+filter *

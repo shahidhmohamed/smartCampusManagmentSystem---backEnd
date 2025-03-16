@@ -1,0 +1,31 @@
+enum EventStatus {
+    UPCOMING,
+    ONGOING,
+    COMPLETED,
+    CANCLLED
+}
+
+entity CampusEvent {
+    eventName String
+    description String
+    eventDate String
+    location String
+    organizerId String
+    eventType String
+    capacity Integer
+    status EventStatus
+}
+
+
+entity CampusEventParticipant {
+    eventId String
+    studentId String
+    studentName String
+    email String
+}
+
+paginate * with pagination
+service * with serviceClass
+dto * with mapstruct
+search * with elasticsearch
+filter *

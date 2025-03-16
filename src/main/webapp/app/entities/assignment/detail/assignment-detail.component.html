@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (assignment(); as assignmentRef) {
+      <div>
+        <h2 data-cy="assignmentDetailsHeading"><span>Assignment</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ assignmentRef.id }}</span>
+          </dd>
+          <dt><span>Title</span></dt>
+          <dd>
+            <span>{{ assignmentRef.title }}</span>
+          </dd>
+          <dt><span>Description</span></dt>
+          <dd>
+            <span>{{ assignmentRef.description }}</span>
+          </dd>
+          <dt><span>Course Id</span></dt>
+          <dd>
+            <span>{{ assignmentRef.courseId }}</span>
+          </dd>
+          <dt><span>Module Id</span></dt>
+          <dd>
+            <span>{{ assignmentRef.moduleId }}</span>
+          </dd>
+          <dt><span>Instructor Id</span></dt>
+          <dd>
+            <span>{{ assignmentRef.instructorId }}</span>
+          </dd>
+          <dt><span>Created By</span></dt>
+          <dd>
+            <span>{{ assignmentRef.createdBy }}</span>
+          </dd>
+          <dt><span>Created At</span></dt>
+          <dd>
+            <span>{{ assignmentRef.createdAt }}</span>
+          </dd>
+          <dt><span>Modified At</span></dt>
+          <dd>
+            <span>{{ assignmentRef.modifiedAt }}</span>
+          </dd>
+          <dt><span>Dead Line</span></dt>
+          <dd>
+            <span>{{ assignmentRef.deadLine }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/assignment', assignmentRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

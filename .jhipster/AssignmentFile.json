@@ -1,0 +1,80 @@
+{
+  "annotations": {
+    "changelogDate": "20250315141844"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "studentId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assignmentId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fileSize",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "modifiedAt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mimeType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "extension",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "binaryData",
+      "fieldType": "Blob"
+    },
+    {
+      "fieldName": "markingStatus",
+      "fieldType": "MarkingStatus",
+      "fieldValues": "PENDING,REVIEWED,GRADED"
+    },
+    {
+      "fieldName": "grade",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "feedback",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gradedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gradedAt",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "AssignmentFile",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "elasticsearch",
+  "service": "serviceClass"
+}

@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (campusEvent(); as campusEventRef) {
+      <div>
+        <h2 data-cy="campusEventDetailsHeading"><span>Campus Event</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ campusEventRef.id }}</span>
+          </dd>
+          <dt><span>Event Name</span></dt>
+          <dd>
+            <span>{{ campusEventRef.eventName }}</span>
+          </dd>
+          <dt><span>Description</span></dt>
+          <dd>
+            <span>{{ campusEventRef.description }}</span>
+          </dd>
+          <dt><span>Event Date</span></dt>
+          <dd>
+            <span>{{ campusEventRef.eventDate }}</span>
+          </dd>
+          <dt><span>Location</span></dt>
+          <dd>
+            <span>{{ campusEventRef.location }}</span>
+          </dd>
+          <dt><span>Organizer Id</span></dt>
+          <dd>
+            <span>{{ campusEventRef.organizerId }}</span>
+          </dd>
+          <dt><span>Event Type</span></dt>
+          <dd>
+            <span>{{ campusEventRef.eventType }}</span>
+          </dd>
+          <dt><span>Capacity</span></dt>
+          <dd>
+            <span>{{ campusEventRef.capacity }}</span>
+          </dd>
+          <dt><span>Status</span></dt>
+          <dd>
+            <span>{{
+              { null: '', UPCOMING: 'UPCOMING', ONGOING: 'ONGOING', COMPLETED: 'COMPLETED', CANCLLED: 'CANCLLED' }[
+                campusEventRef.status ?? 'null'
+              ]
+            }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/campus-event', campusEventRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

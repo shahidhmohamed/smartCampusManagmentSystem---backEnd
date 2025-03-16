@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (folder(); as folderRef) {
+      <div>
+        <h2 data-cy="folderDetailsHeading"><span>Folder</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ folderRef.id }}</span>
+          </dd>
+          <dt><span>Name</span></dt>
+          <dd>
+            <span>{{ folderRef.name }}</span>
+          </dd>
+          <dt><span>Contents</span></dt>
+          <dd>
+            <span>{{ folderRef.contents }}</span>
+          </dd>
+          <dt><span>Course Id</span></dt>
+          <dd>
+            <span>{{ folderRef.courseId }}</span>
+          </dd>
+          <dt><span>Course</span></dt>
+          <dd>
+            <span>{{ folderRef.course }}</span>
+          </dd>
+          <dt><span>Semester</span></dt>
+          <dd>
+            <span>{{ folderRef.semester }}</span>
+          </dd>
+          <dt><span>Created By</span></dt>
+          <dd>
+            <span>{{ folderRef.createdBy }}</span>
+          </dd>
+          <dt><span>Created At</span></dt>
+          <dd>
+            <span>{{ folderRef.createdAt }}</span>
+          </dd>
+          <dt><span>Modified At</span></dt>
+          <dd>
+            <span>{{ folderRef.modifiedAt }}</span>
+          </dd>
+          <dt><span>Parent Id</span></dt>
+          <dd>
+            <span>{{ folderRef.parentId }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/folder', folderRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

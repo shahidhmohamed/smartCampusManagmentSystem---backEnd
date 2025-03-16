@@ -1,0 +1,70 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (resource(); as resourceRef) {
+      <div>
+        <h2 data-cy="resourceDetailsHeading"><span>Resource</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ resourceRef.id }}</span>
+          </dd>
+          <dt><span>Resource Id</span></dt>
+          <dd>
+            <span>{{ resourceRef.resourceId }}</span>
+          </dd>
+          <dt><span>Name</span></dt>
+          <dd>
+            <span>{{ resourceRef.name }}</span>
+          </dd>
+          <dt><span>Resource Type</span></dt>
+          <dd>
+            <span>{{
+              {
+                null: '',
+                ROOM: 'ROOM',
+                PROJECTOR: 'PROJECTOR',
+                LAPTOP: 'LAPTOP',
+                WHITEBOARD: 'WHITEBOARD',
+                LAB: 'LAB',
+                COMPUTER_LAB: 'COMPUTER_LAB',
+                AUDITORIUM: 'AUDITORIUM',
+                PRINTER: 'PRINTER',
+                DESK: 'DESK',
+                STUDY_ROOM: 'STUDY_ROOM',
+                MEETING_ROOM: 'MEETING_ROOM',
+                SMART_BOARD: 'SMART_BOARD',
+              }[resourceRef.resourceType ?? 'null']
+            }}</span>
+          </dd>
+          <dt><span>Location</span></dt>
+          <dd>
+            <span>{{ resourceRef.location }}</span>
+          </dd>
+          <dt><span>Capacity</span></dt>
+          <dd>
+            <span>{{ resourceRef.capacity }}</span>
+          </dd>
+          <dt><span>Availability</span></dt>
+          <dd>
+            <span>{{ resourceRef.availability }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/resource', resourceRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

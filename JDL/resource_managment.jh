@@ -1,0 +1,38 @@
+enum ResourceType {
+    ROOM, PROJECTOR, LAPTOP, WHITEBOARD, 
+    LAB, COMPUTER_LAB, AUDITORIUM, PRINTER, DESK, 
+    STUDY_ROOM, MEETING_ROOM, SMART_BOARD
+}
+enum Status {
+    PENDING, APPROVED, REJECTED, CANCELLED
+}
+
+entity Resource {
+    resourceId String,
+    name String,          
+    resourceType ResourceType,
+    location String,                
+    capacity Integer,            
+    availability Boolean
+}
+
+entity ResourceBooking {
+    userId String,            
+    startTime String,    
+    endTime String,      
+    status Status,        
+    reason String,                 
+    adminComment String            
+}
+relationship ManyToOne {
+    ResourceBooking{resource} to Resource
+}
+
+
+
+
+paginate * with pagination
+service * with serviceClass
+dto * with mapstruct
+search * with elasticsearch
+filter *

@@ -1,0 +1,101 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-resource-heading" data-cy="ResourceCreateUpdateHeading">Create or edit a Resource</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id">ID</label>
+            <input type="text" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_resourceId">Resource Id</label>
+          <input
+            type="text"
+            class="form-control"
+            name="resourceId"
+            id="field_resourceId"
+            data-cy="resourceId"
+            formControlName="resourceId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_resourceType">Resource Type</label>
+          <select class="form-control" name="resourceType" formControlName="resourceType" id="field_resourceType" data-cy="resourceType">
+            <option [ngValue]="null"></option>
+            @for (resourceType of resourceTypeValues; track $index) {
+              <option [value]="resourceType">
+                {{
+                  {
+                    null: '',
+                    ROOM: 'ROOM',
+                    PROJECTOR: 'PROJECTOR',
+                    LAPTOP: 'LAPTOP',
+                    WHITEBOARD: 'WHITEBOARD',
+                    LAB: 'LAB',
+                    COMPUTER_LAB: 'COMPUTER_LAB',
+                    AUDITORIUM: 'AUDITORIUM',
+                    PRINTER: 'PRINTER',
+                    DESK: 'DESK',
+                    STUDY_ROOM: 'STUDY_ROOM',
+                    MEETING_ROOM: 'MEETING_ROOM',
+                    SMART_BOARD: 'SMART_BOARD',
+                  }[resourceType]
+                }}
+              </option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_location">Location</label>
+          <input type="text" class="form-control" name="location" id="field_location" data-cy="location" formControlName="location" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_capacity">Capacity</label>
+          <input type="number" class="form-control" name="capacity" id="field_capacity" data-cy="capacity" formControlName="capacity" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_availability">Availability</label>
+          <input
+            type="checkbox"
+            class="form-check"
+            name="availability"
+            id="field_availability"
+            data-cy="availability"
+            formControlName="availability"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

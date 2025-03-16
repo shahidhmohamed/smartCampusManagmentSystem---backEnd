@@ -1,0 +1,160 @@
+//Role-Based Access & Authentication
+
+
+
+entity Authentication {
+    register Boolean (User user)  
+    login Boolean (String email, String password)  
+    resetPassword Boolean (Long userId, String newPassword) 
+}
+
+entity UserProfile {
+    userId Long; 
+    profilePicture String;
+    bio String;
+    interests List<String>; 
+}
+
+//Administrator
+
+entity Administrator extends User {
+    department String;
+}
+
+
+entity UserManagement {
+    userId Long; 
+    status String;  
+}
+
+entity Report { 
+    reportType String; 
+    generatedDate LocalDateTime;
+    details String; 
+}
+
+entity SecurityLog { 
+    userId Long; 
+    action String; 
+    timestamp LocalDateTime; 
+}
+
+//Lecturer
+
+entity Lecturer extends User {
+    department String;
+    assignedCourses List<Long>; // Foreign Key (Course ID) 
+}
+
+entity ClassSchedule {
+    courseId Long; // Foreign Key (Course ID)
+    startTime LocalDateTime;
+    endTime LocalDateTime;
+    location String; 
+}
+
+entity Event {
+    eventName String;
+    eventDate LocalDateTime;
+    description String;
+    organizerId Long; // Foreign Key (Lecturer/Admin ID) 
+}
+
+entity TaskAssignment {
+    lecturerId Long; 
+    studentId Long; 
+    taskDetails String;
+    deadline LocalDateTime; 
+}
+
+
+entity Announcement {
+    senderId Long; // Foreign Key (Lecturer or Admin ID)
+    message String;
+    timestamp LocalDateTime;
+}
+
+
+//Student
+
+entity Student extends User {
+    enrollmentNumber String; // Unique
+    coursed Long; // Foreign Key (Course ID)
+}
+
+entity Course {
+    courseName String;
+    courseCode String; // Unique identifier
+    department String;
+    lecturerId Long; // Foreign Key (Assigned Lecturer)
+    creditHours Integer;
+}
+
+entity CourseRegistration {
+    studentId Long; // Foreign Key
+    courseId Long; // Foreign Key
+    registrationDate LocalDateTime;
+}
+
+entity ExtracurricularActivity {
+    activityName String;
+    activityDate LocalDateTime;
+    description String;
+    organizerId Long; // Foreign Key (Lecturer or Admin ID) 
+}
+
+entity ResourceBooking {
+    userId Long; // Foreign Key (Student or Lecturer ID)
+    resourceType String; // "Classroom", "Lab Equipment"
+    bookingDate LocalDateTime;
+    status String; // "Pending", "Approved", "Rejected" 
+}
+
+
+entity Message {
+    senderId Long; // Foreign Key (Student, Lecturer, or Admin ID)
+    receiverId Long; // Foreign Key (Student, Lecturer, or Admin ID)
+    message String;
+    timestamp LocalDateTime; 
+}
+
+
+entity FileShare {
+    senderId Long; // Foreign Key (Student, Lecturer, or Admin ID)
+    receiverId Long; // Foreign Key (Student, Lecturer, or Admin ID) - Can be null for group   sharing
+    filePath String;
+    filetype String; // "pdf", "docx", "ppt", "zip", etc.
+    fileSize Long; // File size in bytes
+    isGroupFile Boolean;
+    timestamp LocalDateTime;
+}
+
+
+entity AssignmentSubmission {
+    studentId Long; // Foreign Key (Student ID)
+    taskId Long; // Foreign Key (TaskAssignment ID)
+    submissionFilePath String;
+    submittedDate LocalDateTime; 
+}
+
+
+entity Notification {
+    
+     recipientId Long; // Foreign Key
+     message String;
+     type String; // "Email", "SMS", "In-App"
+     isRead Boolean; 
+ }
+ 
+
+
+
+
+
+
+
+
+
+
+
+

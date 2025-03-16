@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (classSchedule(); as classScheduleRef) {
+      <div>
+        <h2 data-cy="classScheduleDetailsHeading"><span>Class Schedule</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>Id</span></dt>
+          <dd>
+            <span>{{ classScheduleRef.id }}</span>
+          </dd>
+          <dt><span>Course Id</span></dt>
+          <dd>
+            <span>{{ classScheduleRef.courseId }}</span>
+          </dd>
+          <dt><span>Module Id</span></dt>
+          <dd>
+            <span>{{ classScheduleRef.moduleId }}</span>
+          </dd>
+          <dt><span>Instructor Id</span></dt>
+          <dd>
+            <span>{{ classScheduleRef.instructorId }}</span>
+          </dd>
+          <dt><span>Schedule Date</span></dt>
+          <dd>
+            <span>{{ classScheduleRef.scheduleDate }}</span>
+          </dd>
+          <dt><span>Schedule Time From</span></dt>
+          <dd>
+            <span>{{ classScheduleRef.scheduleTimeFrom }}</span>
+          </dd>
+          <dt><span>Schedule Time To</span></dt>
+          <dd>
+            <span>{{ classScheduleRef.scheduleTimeTo }}</span>
+          </dd>
+          <dt><span>Location</span></dt>
+          <dd>
+            <span>{{ classScheduleRef.location }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/class-schedule', classScheduleRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>
