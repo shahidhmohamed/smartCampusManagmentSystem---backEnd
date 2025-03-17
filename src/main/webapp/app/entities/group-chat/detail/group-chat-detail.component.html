@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (groupChat(); as groupChatRef) {
+      <div>
+        <h2 data-cy="groupChatDetailsHeading"><span>Group Chat</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ groupChatRef.id }}</span>
+          </dd>
+          <dt><span>Unread Count</span></dt>
+          <dd>
+            <span>{{ groupChatRef.unreadCount }}</span>
+          </dd>
+          <dt><span>Muted</span></dt>
+          <dd>
+            <span>{{ groupChatRef.muted }}</span>
+          </dd>
+          <dt><span>Title</span></dt>
+          <dd>
+            <span>{{ groupChatRef.title }}</span>
+          </dd>
+          <dt><span>Type</span></dt>
+          <dd>
+            <span>{{ groupChatRef.type }}</span>
+          </dd>
+          <dt><span>Created At</span></dt>
+          <dd>
+            <span>{{ groupChatRef.createdAt }}</span>
+          </dd>
+          <dt><span>Owner</span></dt>
+          <dd>
+            <span>{{ groupChatRef.owner }}</span>
+          </dd>
+          <dt><span>Owner Name</span></dt>
+          <dd>
+            <span>{{ groupChatRef.ownerName }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/group-chat', groupChatRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

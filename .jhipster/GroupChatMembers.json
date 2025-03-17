@@ -1,0 +1,27 @@
+{
+  "annotations": {
+    "changelogDate": "20250317120336"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "groupChatId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "memberName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "memberUserId",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "GroupChatMembers",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "elasticsearch",
+  "service": "serviceClass"
+}

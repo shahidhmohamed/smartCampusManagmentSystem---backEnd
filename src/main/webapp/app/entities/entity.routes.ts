@@ -61,6 +61,31 @@ const routes: Routes = [
     data: { pageTitle: 'AssignmentFiles' },
     loadChildren: () => import('./assignment-file/assignment-file.routes'),
   },
+  {
+    path: 'chat-user',
+    data: { pageTitle: 'ChatUsers' },
+    loadChildren: () => import('./chat-user/chat-user.routes'),
+  },
+  {
+    path: 'chat',
+    data: { pageTitle: 'Chats' },
+    loadChildren: () => import('./chat/chat.routes'),
+  },
+  {
+    path: 'message',
+    data: { pageTitle: 'Messages' },
+    loadChildren: () => import('./message/message.routes'),
+  },
+  {
+    path: 'group-chat',
+    data: { pageTitle: 'GroupChats' },
+    loadChildren: () => import('./group-chat/group-chat.routes'),
+  },
+  {
+    path: 'group-chat-members',
+    data: { pageTitle: 'GroupChatMembers' },
+    loadChildren: () => import('./group-chat-members/group-chat-members.routes'),
+  },
   /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
 ];
 

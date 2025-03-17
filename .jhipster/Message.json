@@ -1,0 +1,47 @@
+{
+  "annotations": {
+    "changelogDate": "20250316212452"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "content",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senderId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contactId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "chatId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "groupChatId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "binaryData",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "senderName",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Message",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "elasticsearch",
+  "service": "serviceClass"
+}

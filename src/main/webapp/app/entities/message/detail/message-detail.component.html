@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (message(); as messageRef) {
+      <div>
+        <h2 data-cy="messageDetailsHeading"><span>Message</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ messageRef.id }}</span>
+          </dd>
+          <dt><span>Content</span></dt>
+          <dd>
+            <span>{{ messageRef.content }}</span>
+          </dd>
+          <dt><span>Created At</span></dt>
+          <dd>
+            <span>{{ messageRef.createdAt }}</span>
+          </dd>
+          <dt><span>Sender Id</span></dt>
+          <dd>
+            <span>{{ messageRef.senderId }}</span>
+          </dd>
+          <dt><span>Contact Id</span></dt>
+          <dd>
+            <span>{{ messageRef.contactId }}</span>
+          </dd>
+          <dt><span>Chat Id</span></dt>
+          <dd>
+            <span>{{ messageRef.chatId }}</span>
+          </dd>
+          <dt><span>Group Chat Id</span></dt>
+          <dd>
+            <span>{{ messageRef.groupChatId }}</span>
+          </dd>
+          <dt><span>Binary Data</span></dt>
+          <dd>
+            <span>{{ messageRef.binaryData }}</span>
+          </dd>
+          <dt><span>Sender Name</span></dt>
+          <dd>
+            <span>{{ messageRef.senderName }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/message', messageRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

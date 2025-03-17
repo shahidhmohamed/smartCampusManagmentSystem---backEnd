@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (groupChatMembers(); as groupChatMembersRef) {
+      <div>
+        <h2 data-cy="groupChatMembersDetailsHeading"><span>Group Chat Members</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ groupChatMembersRef.id }}</span>
+          </dd>
+          <dt><span>Group Chat Id</span></dt>
+          <dd>
+            <span>{{ groupChatMembersRef.groupChatId }}</span>
+          </dd>
+          <dt><span>Member Name</span></dt>
+          <dd>
+            <span>{{ groupChatMembersRef.memberName }}</span>
+          </dd>
+          <dt><span>Member User Id</span></dt>
+          <dd>
+            <span>{{ groupChatMembersRef.memberUserId }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/group-chat-members', groupChatMembersRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

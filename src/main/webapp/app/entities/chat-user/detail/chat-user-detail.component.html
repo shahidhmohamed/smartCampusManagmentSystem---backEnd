@@ -1,0 +1,62 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (chatUser(); as chatUserRef) {
+      <div>
+        <h2 data-cy="chatUserDetailsHeading"><span>Chat User</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ chatUserRef.id }}</span>
+          </dd>
+          <dt><span>User Id</span></dt>
+          <dd>
+            <span>{{ chatUserRef.userId }}</span>
+          </dd>
+          <dt><span>Avatar</span></dt>
+          <dd>
+            <span>{{ chatUserRef.avatar }}</span>
+          </dd>
+          <dt><span>Name</span></dt>
+          <dd>
+            <span>{{ chatUserRef.name }}</span>
+          </dd>
+          <dt><span>About</span></dt>
+          <dd>
+            <span>{{ chatUserRef.about }}</span>
+          </dd>
+          <dt><span>Title</span></dt>
+          <dd>
+            <span>{{ chatUserRef.title }}</span>
+          </dd>
+          <dt><span>Birthday</span></dt>
+          <dd>
+            <span>{{ chatUserRef.birthday }}</span>
+          </dd>
+          <dt><span>Address</span></dt>
+          <dd>
+            <span>{{ chatUserRef.address }}</span>
+          </dd>
+          <dt><span>Phone Number</span></dt>
+          <dd>
+            <span>{{ chatUserRef.phoneNumber }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/chat-user', chatUserRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

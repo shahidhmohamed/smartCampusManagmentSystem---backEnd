@@ -1,0 +1,74 @@
+entity ChatUser {
+    userId String
+    avatar String,
+    name String,
+    about String,
+    title String,
+    birthday String,
+    address String
+    phoneNumber String
+}
+
+entity Chat {
+
+    contactId String,
+    contact String,
+    unreadCount String,
+    muted Boolean,
+    title String,
+    type String,
+    createdAt String
+    owner String
+    ownerName String
+    binaryData String
+}
+
+
+entity GroupChat {
+    unreadCount String,
+    muted Boolean,
+    title String,
+    type String,
+    createdAt String
+    owner String
+    ownerName String
+}
+
+
+entity GroupChatMembers {
+    groupChatId String
+    memberName String
+    memberUserId String
+}
+
+
+entity Message {
+    content String,
+    createdAt String,
+    senderId String,
+    contactId String,
+    chatId String
+    groupChatId String
+    binaryData String
+    senderName String
+}
+
+// entity File {
+//     fileName String,
+//     fileType String,
+//     fileUrl String,
+//     uploadedBy String,
+//     chatId String,
+//     mimeType String,
+//     extension String,
+//     binaryData Blob required
+// }
+
+
+
+// DTO, service, pagination
+paginate * with pagination
+service * with serviceClass
+dto * with mapstruct
+search * with elasticsearch
+filter *
