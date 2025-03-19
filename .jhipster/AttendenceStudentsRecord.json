@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20250319013408"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "attendenceId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "studentId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "studentName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isPresent",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "AttendenceStudentsRecord",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "elasticsearch",
+  "service": "serviceClass"
+}

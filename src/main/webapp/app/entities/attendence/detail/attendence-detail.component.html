@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (attendence(); as attendenceRef) {
+      <div>
+        <h2 data-cy="attendenceDetailsHeading"><span>Attendence</span></h2>
+
+        <hr />
+
+        <jhi-alert-error></jhi-alert-error>
+
+        <jhi-alert></jhi-alert>
+
+        <dl class="row-md jh-entity-details">
+          <dt><span>ID</span></dt>
+          <dd>
+            <span>{{ attendenceRef.id }}</span>
+          </dd>
+          <dt><span>Created At</span></dt>
+          <dd>
+            <span>{{ attendenceRef.createdAt }}</span>
+          </dd>
+          <dt><span>Course Id</span></dt>
+          <dd>
+            <span>{{ attendenceRef.courseId }}</span>
+          </dd>
+          <dt><span>Course Name</span></dt>
+          <dd>
+            <span>{{ attendenceRef.courseName }}</span>
+          </dd>
+          <dt><span>Instructor Id</span></dt>
+          <dd>
+            <span>{{ attendenceRef.instructorId }}</span>
+          </dd>
+          <dt><span>Instructor Name</span></dt>
+          <dd>
+            <span>{{ attendenceRef.instructorName }}</span>
+          </dd>
+          <dt><span>Module Id</span></dt>
+          <dd>
+            <span>{{ attendenceRef.moduleId }}</span>
+          </dd>
+          <dt><span>Module Name</span></dt>
+          <dd>
+            <span>{{ attendenceRef.moduleName }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/attendence', attendenceRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

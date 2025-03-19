@@ -86,6 +86,16 @@ const routes: Routes = [
     data: { pageTitle: 'GroupChatMembers' },
     loadChildren: () => import('./group-chat-members/group-chat-members.routes'),
   },
+  {
+    path: 'attendence',
+    data: { pageTitle: 'Attendences' },
+    loadChildren: () => import('./attendence/attendence.routes'),
+  },
+  {
+    path: 'attendence-students-record',
+    data: { pageTitle: 'AttendenceStudentsRecords' },
+    loadChildren: () => import('./attendence-students-record/attendence-students-record.routes'),
+  },
   /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
 ];
 

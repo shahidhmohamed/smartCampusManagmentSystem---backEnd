@@ -1,0 +1,29 @@
+entity Attendence {
+    createdAt String,
+    courseId String,
+    courseName String,
+    instructorId String
+    instructorName String
+    moduleId String
+    moduleName String
+}
+
+
+entity AttendenceStudentsRecord {
+    attendenceId String
+    studentId String
+    studentName String
+    isPresent Boolean
+    createdAt String
+    createdBy String
+}
+
+
+
+
+// DTO, service, pagination
+paginate * with pagination
+service * with serviceClass
+dto * with mapstruct
+search * with elasticsearch
+filter *

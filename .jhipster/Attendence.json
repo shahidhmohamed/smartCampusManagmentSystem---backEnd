@@ -1,0 +1,43 @@
+{
+  "annotations": {
+    "changelogDate": "20250319013407"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "createdAt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "courseId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "courseName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "instructorId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "instructorName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "moduleId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "moduleName",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Attendence",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "elasticsearch",
+  "service": "serviceClass"
+}

@@ -32,13 +32,15 @@
       "Chat",
       "Message",
       "GroupChat",
-      "GroupChatMembers"
+      "GroupChatMembers",
+      "Attendence",
+      "AttendenceStudentsRecord"
     ],
     "feignClient": null,
     "gradleEnterpriseHost": null,
     "jhipsterVersion": "8.9.0",
     "jwtSecretKey": "NWFhZTNhNzM5MmUyOTU2YjJjYjg5N2RhMDU5YTU0NTEyZDMwNDYxODMxYmYwNjVmMDk4ZWNjNWM5NmMzOTlkOGRiMzQ1NGQxYmY0ZjZkZTMyZGY4ZWYzMWY0ZTdmZmMwZTY3MGNhNDRjMjk2ODBmYjgzNWNjOGFlNjc0M2UyNzc=",
-    "lastLiquibaseTimestamp": 1742213016000,
+    "lastLiquibaseTimestamp": 1742348048000,
     "microfrontend": null,
     "microfrontends": [],
     "nativeLanguage": "en",
